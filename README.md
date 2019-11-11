@@ -10,3 +10,6 @@ Required libaries and Python packages are installed via
 sudo apt install python3-pip libopenjp2-7 libtiff5
 sudo pip3 install Pillow
 ```
+
+## Case
+The 3D printable case is intended for use with Raspberry Pi Model B (from 2012).
