@@ -39,9 +39,15 @@ ln -s $HOME/Pibert/dilbert_today.timer $HOME/.config/systemd/user
 # Reload user specific systemd units
 systemctl --user daemon-reload
 
-# Enable and start timer
+# Enable and start timers
 systemctl --user enable dilbert_today.timer
 systemctl --user start dilbert_today.timer
+systemctl --user enable dilbert_random.timer
+systemctl --user start dilbert_random.timer
+
+# Enable and start daemon for the arcade button
+systemctl --user enable dilbert_daemon.service
+systemctl --user start dilbert_daemon.service
 
 # Make sure the timer runs while the user is not logged in
 sudo loginctl enable-linger $USER
@@ -50,3 +56,5 @@ sudo loginctl enable-linger $USER
 ## Case
 
 The 3D printable case is intended for use with Raspberry Pi Model B (from 2012).
+
+![3D printable case model](case.png)
