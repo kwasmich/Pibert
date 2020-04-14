@@ -1,0 +1,8 @@
+[Unit]
+Description=Print random Dilbert's Daily Comic Strip
+
+[Service]
+ExecStart=%h/Pibert/dilbert_rnd.py
+
+[Install]
+WantedBy=default.target
