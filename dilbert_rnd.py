@@ -14,4 +14,4 @@ deltaS = delta.total_seconds()
 rand = random.randrange(0, deltaS)
 randD = first + datetime.timedelta(seconds=rand)
 
-os.system("./dilbert_base.py " + str(randD))
+os.system("$HOME/Pibert/dilbert_base.py " + str(randD))
