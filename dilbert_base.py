@@ -1,8 +1,5 @@
 #!/usr/bin/python3
 
-#sudo apt install python3-pip libopenjp2-7 libtiff5
-#sudo pip3 install Pillow
-
 import urllib.request
 import re
 import sys
