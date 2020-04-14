@@ -35,6 +35,9 @@ mkdir $HOME/.config/systemd/user
 # Link service and timer files
 ln -s $HOME/Pibert/dilbert_today.service $HOME/.config/systemd/user
 ln -s $HOME/Pibert/dilbert_today.timer $HOME/.config/systemd/user
+ln -s $HOME/Pibert/dilbert_random.service $HOME/.config/systemd/user
+ln -s $HOME/Pibert/dilbert_random.timer $HOME/.config/systemd/user
+ln -s $HOME/Pibert/dilbert_daemon.service $HOME/.config/systemd/user
 
 # Reload user specific systemd units
 systemctl --user daemon-reload
