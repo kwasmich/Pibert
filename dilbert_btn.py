@@ -5,8 +5,8 @@ from signal import pause
 import os
 
 def name():
-	print("Hello world!")
-	os.system("./dilbert_rnd.py")
+	print("Attempting to print...")
+	os.system("$HOME/Pibert/dilbert_rnd.py")
 
 button = Button(18)
 
