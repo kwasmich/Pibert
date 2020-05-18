@@ -8,9 +8,9 @@ import os
 from PIL import Image, ImageOps, ImageFilter, ImageEnhance
 
 if len(sys.argv) > 1:
-    os.system('echo "' + sys.argv[1] + '\\n" > /dev/serial0')
+    os.system('echo "' + sys.argv[1] + '" > /dev/serial0')
 else:
-    os.system('echo "' + str(datetime.date.today()) + '\\n" > /dev/serial0')
+    os.system('echo "' + str(datetime.date.today()) + '" > /dev/serial0')
 
 if len(sys.argv) > 1:
     dilbertURL = "https://dilbert.com/strip/" + sys.argv[1]
