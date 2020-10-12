@@ -2,7 +2,8 @@
 Description=Print random Dilbert's Daily Comic Strip
 
 [Service]
-ExecStart=%h/Pibert/dilbert_rnd.py
+WorkingDirectory=%h/Pibert/cache
+ExecStart=%h/Pibert/bin/dilbert_rnd.py
 
 [Install]
 WantedBy=default.target

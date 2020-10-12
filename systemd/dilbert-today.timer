@@ -1,8 +1,9 @@
 [Unit]
 Description=Print Dilbert's Daily Comic Strip of today
 
-[Service]
-ExecStart=%h/Pibert/dilbert_base.py
+[Timer]
+# Start into the day
+OnCalendar=07:00
 
 [Install]
-WantedBy=default.target
+WantedBy=timers.target

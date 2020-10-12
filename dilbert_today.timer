@@ -1,9 +1,0 @@
-[Unit]
-Description=Print Dilbert's Daily Comic Strip of today
-
-[Timer]
-# Start into the day
-OnCalendar=08:00
-
-[Install]
-WantedBy=timers.target
