@@ -33,24 +33,24 @@ User specific _systemd_ setup is not easy for sure :-(
 mkdir $HOME/.config/systemd/user
 
 # Link service and timer files
-ln -s $HOME/Pibert/dilbert_today.service $HOME/.config/systemd/user
-ln -s $HOME/Pibert/dilbert_today.timer $HOME/.config/systemd/user
-ln -s $HOME/Pibert/dilbert_random.service $HOME/.config/systemd/user
-ln -s $HOME/Pibert/dilbert_random.timer $HOME/.config/systemd/user
-ln -s $HOME/Pibert/dilbert_daemon.service $HOME/.config/systemd/user
+ln -s $HOME/Pibert/systemd/dilbert-today.service $HOME/.config/systemd/user
+ln -s $HOME/Pibert/systemd/dilbert-today.timer $HOME/.config/systemd/user
+ln -s $HOME/Pibert/systemd/dilbert-random.service $HOME/.config/systemd/user
+ln -s $HOME/Pibert/systemd/dilbert-random.timer $HOME/.config/systemd/user
+ln -s $HOME/Pibert/systemd/dilbert-buttond.service $HOME/.config/systemd/user
 
 # Reload user specific systemd units
 systemctl --user daemon-reload
 
 # Enable and start timers
-systemctl --user enable dilbert_today.timer
-systemctl --user start dilbert_today.timer
-systemctl --user enable dilbert_random.timer
-systemctl --user start dilbert_random.timer
+systemctl --user enable dilbert-today.timer
+systemctl --user start dilbert-today.timer
+systemctl --user enable dilbert-random.timer
+systemctl --user start dilbert-random.timer
 
 # Enable and start daemon for the arcade button
-systemctl --user enable dilbert_daemon.service
-systemctl --user start dilbert_daemon.service
+systemctl --user enable dilbert-buttond.service
+systemctl --user start dilbert-buttond.service
 
 # Make sure the timer runs while the user is not logged in
 sudo loginctl enable-linger $USER
@@ -60,4 +60,4 @@ sudo loginctl enable-linger $USER
 
 The 3D printable case is intended for use with Raspberry Pi Model B (from 2012).
 
-![3D printable case model](case.png)
+![3D printable case model](thingy/DilbertPrinter_case.png)

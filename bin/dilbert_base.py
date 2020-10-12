@@ -7,10 +7,13 @@ import datetime
 import os
 from PIL import Image, ImageOps, ImageFilter, ImageEnhance
 
+import logging
+logging.basicConfig(format="%(levelname)s:%(asctime)s:%(message)s", level=logging.INFO)
+
 if len(sys.argv) > 1:
-    os.system('echo "' + sys.argv[1] + '\\n" > /dev/serial0')
+    os.system('echo "' + sys.argv[1] + '" > /dev/serial0')
 else:
-    os.system('echo "' + str(datetime.date.today()) + '\\n" > /dev/serial0')
+    os.system('echo "' + str(datetime.date.today()) + '" > /dev/serial0')
 
 if len(sys.argv) > 1:
     dilbertURL = "https://dilbert.com/strip/" + sys.argv[1]
@@ -20,18 +23,14 @@ else:
 dilbertURLResponse = urllib.request.urlopen(dilbertURL)
 dilbertURLData = dilbertURLResponse.read()      # a `bytes` object
 dilbertHTML = dilbertURLData.decode("utf-8")
-#print(dilbertHTML)
 
+# HACK Should traverse the DOM
 imageURLRegExp = re.compile('data-image="([^\s]*)"')
 imageURL = imageURLRegExp.findall(dilbertHTML)
 
-#print("https:" + imageURL[0])
-
-#imageURLResponse = urllib.request.urlopen("https:" + imageURL[0])
-#imageURLData = imageURLResponse.read()      # a `bytes` object
-#print(sys.getsizeof(imageURLData))
-file_name, headers = urllib.request.urlretrieve("https:" + imageURL[0])
-#print(file_name)
+# TODO Should download into the cache folder
+logging.info("Downloading asset `%s'", imageURL[0])
+file_name, headers = urllib.request.urlretrieve(imageURL[0])
 
 image = Image.open(file_name)
 image = image.convert('L')
