@@ -1,8 +1,5 @@
 #!/usr/bin/python3
 
-#sudo apt install python3-pip libopenjp2-7 libtiff5
-#sudo pip3 install Pillow
-
 import urllib.request
 import re
 import sys
@@ -17,12 +14,12 @@ print(dilbertHTML)
 imageURLRegExp = re.compile('data-image="([^\s]*)"')
 imageURL = imageURLRegExp.findall(dilbertHTML)
 
-print('https:' + imageURL[0])
+print(imageURL[0])
 
 #imageURLResponse = urllib.request.urlopen('https:' + imageURL[0])
 #imageURLData = imageURLResponse.read()      # a `bytes` object
 #print(sys.getsizeof(imageURLData))
-file_name, headers = urllib.request.urlretrieve('https:' + imageURL[0])
+file_name, headers = urllib.request.urlretrieve(imageURL[0])
 print(file_name)
 
 image = Image.open(file_name)
