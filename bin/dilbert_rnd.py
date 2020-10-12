@@ -11,5 +11,5 @@ deltaS = delta.total_seconds()
 rand = random.randrange(0, deltaS)
 randD = first + datetime.timedelta(seconds=rand)
 
-# TODO Path should be more dynamic
+# TODO Path should be relative
 os.system("$HOME/Pibert/bin/dilbert_base.py " + str(randD))

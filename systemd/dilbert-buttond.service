@@ -3,7 +3,7 @@ Description=Print button pressed random Dilbert's Daily Comic Strip
 
 [Service]
 WorkingDirectory=%h/Pibert/cache
-ExecStart=%h/Pibert/dilbert_btn.py
+ExecStart=%h/Pibert/bin/dilbert_btn.py
 
 [Install]
 WantedBy=default.target

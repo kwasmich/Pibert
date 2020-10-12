@@ -3,7 +3,7 @@ Description=Print Dilbert's Daily Comic Strip of today
 
 [Service]
 WorkingDirectory=%h/Pibert/cache
-ExecStart=%h/Pibert/dilbert_base.py
+ExecStart=%h/Pibert/bin/dilbert_base.py
 
 [Install]
 WantedBy=default.target
