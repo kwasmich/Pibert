@@ -60,4 +60,4 @@ sudo loginctl enable-linger $USER
 
 The 3D printable case is intended for use with Raspberry Pi Model B (from 2012).
 
-![3D printable case model](case.png)
+![3D printable case model](thingy/DilbertPrinter_case.png)
