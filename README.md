@@ -21,7 +21,7 @@ sudo pip3 install Pillow
 ### Clone project
 
 ```bash
-git clone https://github.com/mrkskwsnck/Pibert.git $HOME/Pibert
+git clone https://github.com/kwasmich/Pibert.git $HOME/Pibert
 ```
 
 ### Systemd setup
