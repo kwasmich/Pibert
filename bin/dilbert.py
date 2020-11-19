@@ -19,6 +19,9 @@ print(imageURL[0])
 #imageURLResponse = urllib.request.urlopen('https:' + imageURL[0])
 #imageURLData = imageURLResponse.read()      # a `bytes` object
 #print(sys.getsizeof(imageURLData))
+
+# TODO Consider enterprise handling of URL protocol scheme like:
+# > 'https:' + imageURL[0]
 file_name, headers = urllib.request.urlretrieve(imageURL[0])
 print(file_name)
 
