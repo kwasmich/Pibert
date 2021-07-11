@@ -30,6 +30,8 @@ imageURL = imageURLRegExp.findall(dilbertHTML)
 
 # TODO Should download into the cache folder
 logging.info("Downloading asset `%s'", imageURL[0])
+# TODO Consider enterprise handling of URL protocol scheme like:
+# > 'https:' + imageURL[0]
 file_name, headers = urllib.request.urlretrieve(imageURL[0])
 
 image = Image.open(file_name)
